@@ -69,3 +69,24 @@ startup
 ###
 * mongod --dbpath <path> --logpath=[full_path]
 * mongod --config [config_full_path]
+
+
+config
+###
+```yaml
+systemLog:
+  destination: file
+  path: C:\MongoDB\server\5.0\log\mongod.log
+  logAppend: true
+storage:
+  journal:
+    enabled: true
+  dbPath: C:\MongoDB\server\5.0\data
+net:
+  bindIpAll: true
+  port: 27017
+```
+
+DATA投入
+###
+* mongo 127.0.0.1:27017/booklog insert.js
