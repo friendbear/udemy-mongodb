@@ -90,3 +90,34 @@ net:
 DATA投入
 ###
 * mongo 127.0.0.1:27017/booklog insert.js
+
+DB操作
+###
+* use <DATABASE>
+* db
+* show dbs
+* db.createCollection("test")
+* db.dropDatabase()
+
+コレクション操作
+###
+* db.createCollection(<COLLECTION>)
+* db.<SOURCE>.renameCollection(<TARGET>, <DROP[true|false]>)
+* db.<TARGET>.drop()
+
+ドキュメント操作
+###
+* db.<TARGET>.insert(<DOCUMENT>)
+* db.<TARGET>.find(<QUERY>)
+* db.<TARGET>.update(<QUERY>, <UPDATE>, <OPTION>)
+  * OPTION {multi: true}
+* db.<TARGET>.remove(<QUERY>, <JUSTONE>)
+
+document-op1
+```json
+{
+  email: "sachiko.sato@sample.co.jp",
+  password: "P@ssword",
+  name: "佐藤 幸子"
+}
+```
