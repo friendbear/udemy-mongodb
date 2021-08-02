@@ -101,19 +101,20 @@ DB操作
 
 コレクション操作
 ###
-* db.createCollection(<COLLECTION>)
-* db.<SOURCE>.renameCollection(<TARGET>, <DROP[true|false]>)
-* db.<TARGET>.drop()
+* db.createCollection("COLLECTION")
+* db."SOURCE".renameCollection("TARGET", "DROP[true|false]")
+* db."TARGET".drop()
 
 ドキュメント操作
 ###
-* db.<TARGET>.insert(<DOCUMENT>)
-* db.<TARGET>.find(<QUERY>)
-* db.<TARGET>.update(<QUERY>, <UPDATE>, <OPTION>)
+* db."TARGET".insert("DOCUMENT")
+* db."TARGET".find("QUERY")
+* db."TARGET".update("QUERY", "UPDATE", "OPTION")
   * OPTION {multi: true}
-* db.<TARGET>.remove(<QUERY>, <JUSTONE>)
+* db."TARGET".remove("QUERY", "JUSTONE")
 
-document-op1
+> document-op1/insert.js, update.js, drop.js
+
 ```json
 {
   email: "sachiko.sato@sample.co.jp",
@@ -121,3 +122,32 @@ document-op1
   name: "佐藤 幸子"
 }
 ```
+
+データ型
+###
+
+![img](image/datatype.png)
+
+ドキュメント件数取得
+###
+
+* db."TARGET".count("QUERY")
+* db."TARGET".find("QUERY").count()
+
+> document-op1/01-counts.js
+
+検索結果のソート
+###
+
+カーソル／検索結果セットに対するポインタ
+* db."collection".find("QUERY")
+
+* cursor.sort("ORDER")
+  * {order: [1| -1]}
+
+検索結果の制限
+###
+
+* cursor.skip("OFFSET")
+* cursor.limit("LIMIT")
+
