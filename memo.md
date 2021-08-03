@@ -151,3 +151,111 @@ DB操作
 * cursor.skip("OFFSET")
 * cursor.limit("LIMIT")
 
+インデックスの作成/確認/削除
+###
+* db."TARGET".createIndex("KEYS", "OPTION")
+  * OPTION: {name: index名}
+* db."TARGET".getIndexes()
+* db."TARGET".dropIndex("NAME")
+
+一意制約作成
+###
+* db."TARGET".createIndex("KEYS", "OPTION")
+  * OPTION: {unique: true}
+
+
+```
+■データベース操作
+
+    データベース作成
+
+        use <DATABASE>
+
+    接続中データベース名確認
+
+        db
+
+    データベース一覧表示
+
+        show dbs
+
+    データベース名変更
+
+        db.copyDatabase(<OLD_DATABASE>, <NEW_DATABASE>)
+        use <OLD_DATABASE>
+        db.dropDatabase()
+
+    データベース削除
+
+        use <DATABASE>
+        db.dropDatabase()
+
+
+■コレクション操作
+
+    コレクション作成
+
+        db.createCollection(<COLLECTION>)
+
+    コレクション一覧表示
+
+        show collections
+
+    コレクション名変更
+
+        db.<SOURCE_COLLECTION>.renameCollection(<TARGET_COLLECTION>, <DROP>)
+
+    コレクション削除
+
+        db.<COLLECTION>.drop()
+
+
+■ドキュメント操作
+
+    ドキュメント作成
+
+        db.<COLLECTION>.insert(<DOCUMENTS>)
+
+    ドキュメント一覧表示
+
+        db.<COLLECTION>.find(<QUERY>)
+
+    ドキュメント更新
+
+        db.<COLLECTION>.update(<QUERY>, <UPDATE>, <OPTION>)
+
+    ドキュメント削除
+
+        db.<COLLECTION>.remove(<QUERY>)
+
+    ドキュメント件数取得
+
+        db.<COLLECTION>.count(<QUERY>)
+
+        db.<COLLECTION>.find(<QUERY>).count()
+
+    ドキュメント取得結果のソート
+
+        db.<COLLECTION>.find(<QUERY>).sort(<ORDER>)
+
+    ドキュメント取得制限
+
+        db.<COLLECTION>.find(<QUERY>).sort(<ORDER>).skip(<OFFSET>).limit(<LIMIT>)
+
+
+■インデックス/一意制約
+
+    インデックス作成
+
+        db.<COLLECTION>.createIndex(<KEYS>, <OPTIONS>)
+
+    ※一意制約は OPTIONS に { unique: true } を指定。
+
+    インデックス確認
+
+        db.<COLLECTION>.getIndexes()
+
+    インデックス削除
+
+        db.<COLLECTION>.dropIndex(<NAME>)
+```
