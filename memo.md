@@ -268,3 +268,11 @@ DB操作
 * $lt, $lte
 * $in
 * 日付の比較 ISODate("yyyy-mm-ddThh:mm:ss+hh:mm)
+
+論理演算子
+###
+
+* 論理積 $and: ["EXP1", "EXP2"]
+* 論理和 $or: ["EXP1", "EXP2"]
+* 否定 $not
+
