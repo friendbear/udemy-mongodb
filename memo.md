@@ -259,3 +259,12 @@ DB操作
 
         db.<COLLECTION>.dropIndex(<NAME>)
 ```
+
+
+関係演算子
+###
+
+* $gt, $gte
+* $lt, $lte
+* $in
+* 日付の比較 ISODate("yyyy-mm-ddThh:mm:ss+hh:mm)
