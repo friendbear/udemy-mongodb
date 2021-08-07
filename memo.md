@@ -281,3 +281,8 @@ DB操作
 
 * 正規表現 $regex /a/b/
 * アグリゲーション $expr: expr
+
+要素演算子
+###
+* $exists: [true|false]
+* $type: "type string"
