@@ -1,6 +1,8 @@
 
 for Windows
-##
+## 
+
+## How to start
 
 ```
 ■WindowsへMongoDBをインストール
@@ -60,6 +62,7 @@ for Windows
         #  port: 27017
           bindIpAll: true
 ```
+
 shutdown
 ###
 
@@ -163,7 +166,7 @@ DB操作
 * db."TARGET".createIndex("KEYS", "OPTION")
   * OPTION: {unique: true}
 
-
+## まとめ４
 ```
 ■データベース操作
 
@@ -286,3 +289,102 @@ DB操作
 ###
 * $exists: [true|false]
 * $type: "type string"
+
+
+配列演算子
+###
+* 要素と一致 $elemMatch: {expr1, }
+* 要素数 $size
+
+まとめ（ドキュメント検索で使う演算子）
+##
+
+```
+本セクションでは検索クエリの条件演算子を学習しました。以下に本セクションで学習した演算子をまとめましたので、実際に実行して試してみましょう。
+
+
+■検索クエリ
+
+    db.<COLLECTION>.find(<QUERY>)
+
+本セクションは上記クエリの [QUERY] に関する学習でした。以下に学習した演算子をまとめますので、実際に動かしながら復習しましょう。
+
+
+■関係演算子
+
+    等値（＝）
+
+        { <FIELD>: { $eq: <VALUE> } }
+
+    非等値（≠）
+
+        { <FIELD>: { $ne: <VALUE> } }
+
+    より大きい（＞）
+
+         { <FIELD>: { $gt: <VALUE> } }
+
+    より大きい（≧）
+
+        { <FIELD>: { $gte: <VALUE> } }
+
+    より大きい（＜）
+
+         { <FIELD>: { $lt: <VALUE> } }
+
+    より大きい（≦）
+
+        { <FIELD>: { $lte: <VALUE> } }
+
+    いずれか
+
+        { <FIELD>: { $in: [<VALUE1>, <VALUE2>, ...] } }
+
+
+■論理演算子
+
+    論理積
+
+        { $and: { <EXPRESSION1>, <EXPRESSION2>, ... } }
+
+    論理和
+
+        { $or: { <EXPRESSION1>, <EXPRESSION2>, ... } }
+
+    論理否定
+
+        { $not: <EXPRESSION> }
+
+
+■評価演算子
+
+    正規表現
+
+        { <FIELD>: { $regex: <REGEX> } }
+
+    アグリゲーション
+
+        { $expr: <EXPRESSION> }
+
+
+■要素演算子
+
+    フィールドの存在
+
+        { <FIELD>: { $exists: <BOOL> } }
+
+    バリューの型
+
+        { <FIELD>: { $type: [ <TYPE1>, <TYPE2>, ... ]  } }
+
+
+■配列演算子
+
+    配列要素に一致
+
+        { <FIELD>: { $elemMatch: { <EXPRESSION1>, <EXPRESSION2>, ... } } }
+
+    配列要素数
+
+        { <FIELD>: { $size: [SIZE] } }
+```
