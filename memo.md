@@ -388,3 +388,17 @@ DB操作
 
         { <FIELD>: { $size: [SIZE] } }
 ```
+
+ドキュメント更新で使う演算子
+##
+
+フィールドの更新
+###
+
+`db."TARGET".update("QUERY", "UPDATE", "OPTION")`
+
+
+OPTION
+* multi : 条件に合致するすべてを行使するかどうか
+* upsert: 存在すれば更新、なければ挿入
+* arrayFilters: 配列更新時に使う修飾子
