@@ -426,4 +426,12 @@ OPTION
 `$currentDate` "date" 型
 
 
+フィールドを加算/乗算して更新
+###
+
+* `$inc`
+* `$mul`
+
+
+
 
