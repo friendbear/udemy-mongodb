@@ -418,3 +418,12 @@ OPTION
 ###
 
 リネームする `$rename`
+
+
+現在日時で更新
+###
+
+`$currentDate` "date" 型
+
+
+
