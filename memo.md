@@ -449,3 +449,9 @@ OPTION
 ###
 
 * ` <operator>: { "ARRAY".$[]". "VALUE",..} `
+
+
+配列要素の削除
+###
+
+* ` $pop` `$pull`
