@@ -46,3 +46,7 @@ aggregate([
 ###
 * `$match`
 
+
+再フォーマット
+###
+* `$project`
