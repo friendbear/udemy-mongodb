@@ -454,4 +454,109 @@ OPTION
 配列要素の削除
 ###
 
-* ` $pop` `$pull`
+* `$pop` 
+* `$pull`
+
+まとめ
+##
+
+```
+まとめ（ドキュメント更新で使う演算子）
+
+「ドキュメント更新で使う演算子」のセクションでは更新時に使う演算子を学習しました。
+
+学習してきた演算子とその使い方を以下にまとめますので次へ進む前に復習しておきましょう。
+
+
+■単純フィールド更新
+
+    フィールドの更新
+
+        db.<COLLECTION>.update(
+          <QUERY>,
+          { $set: { <FIELD1>: <VALUE1>, ... } }
+        )
+
+    フィールドの削除
+
+        db.<COLLECTION>.update(
+          <QUERY>,
+          { $unset: { <FIELD1>: "", ... } }
+        )
+
+    フィールド名の変更
+
+        db.<COLLECTION>.update(
+          <QUERY>,
+          { $rename: { <FIELD1>: <NEW_NAME1>, ... } }
+        )
+
+    フィールドを現在日時で更新
+
+        db.<COLLECTION>.update(
+          <QUERY>,
+          { $currentDate: { <FIELD1>: true, ... } }
+        )
+
+    フィールドを加算して更新
+
+        db.<COLLECTION>.update(
+          <QUERY>,
+          { $inc: { <FIELD1>: <VALUE1>, ... } }
+        )
+
+    フィールドを乗算して更新
+
+        db.<COLLECTION>.update(
+          <QUERY>,
+          { $mul: { <FIELD1>: <VALUE1>, ... } }
+        )
+
+
+■配列フィールド更新
+
+    配列要素に追加
+
+        db.<COLLECTION>.update(
+          <QUERY>,
+          { $push: { "<FIELD1>" : <VALUE1>, ... } }
+        )
+
+    配列要素に追加（修飾子利用）
+
+        db.<COLLECTION>.update(
+          <QUERY>,
+          {
+            $push: {
+              "<FIELD1>" : {
+                $each: [ <VALUE1>, ... ],
+                $sort: { <FIELDa>, <1 | -1>, ... },
+                $slice: <NUMBER>,
+                $position: <NUMBER>
+              }, ...
+            }
+          }
+        )
+
+    配列要素の更新
+
+        db.<COLLECTION>.update(
+          <QUERY>,
+          { <OPERATOR>: { "<ARRAY>.$[<ID>]": <VALUE>, ... } },
+          { arrayFilters: [ <EXPRESSION> ], multi: true }
+        )
+
+    配列要素から先頭/末尾を削除
+
+        db.<COLLECTION>.update(
+          <QUERY>,
+          { $pop: { "<ARRAY>" : <-1 | 1>, ... } }
+        )
+
+    配列要素を削除
+
+        db.<COLLECTION>.update(
+          <QUERY>,
+          { $pull: { "<ARRAY>" : <VALUE | EXPRESSION>, ... } }
+        )
+```
