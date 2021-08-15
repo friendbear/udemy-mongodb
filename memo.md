@@ -443,3 +443,9 @@ OPTION
   * `$each`
   * `$slice`
   * `$position`
+
+
+配列要素の更新
+###
+
+* ` <operator>: { "ARRAY".$[]". "VALUE",..} `
