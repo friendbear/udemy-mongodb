@@ -91,3 +91,20 @@ ACCUMULATOR: $sum
 * `$substract` 引き算
 * `$multiply` 掛け算
 * `$divide` 割り算
+
+グループごとに最小値／最大値を集計
+####
+
+オペレータ
+* `$min`
+* `$max`
+
+グループ化条件で以下のように指定すると年月日で集計できる
+```json
+_id: {
+    year: {$year: "$date"},
+    month: {$month: "$date"},
+    day: {$dayOfMonth: "$date"}
+}
+```
+
