@@ -81,3 +81,13 @@ $sumオペレータ
 
 ACCUMULATOR: $sum
 
+
+グループごとにデータ合計値を集計
+####
+
+オペレータ
+* `$sum` 加算
+* `$add` 足し算
+* `$substract` 引き算
+* `$multiply` 掛け算
+* `$divide` 割り算
