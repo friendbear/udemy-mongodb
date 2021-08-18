@@ -60,3 +60,24 @@ aggregate([
 検索結果件数取得
 ###
 * `$count`
+
+
+グループごとにデータ件数を集計
+###
+* `$group`
+
+```js
+db."COLLECTION".aggregate([{
+    $group: {
+        _id: "CONDITION",
+        "FIELD1": { "ACCUMULATOR1": "EXPRESSION1" },
+        ...
+    }
+}])
+```
+
+$sumオペレータ
+####
+
+ACCUMULATOR: $sum
+
