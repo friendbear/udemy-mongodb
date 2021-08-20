@@ -156,3 +156,28 @@ _id: 0 を設定すると全体をグループ化
 オペレーター
 * `$cond`
 * `$switch case then default`
+
+
+コレクションの結合
+####
+
+ステージ
+* `$lookup`
+
+```json
+$lookup: {
+    from: "",
+    localField: "",
+    foreignField: "",
+    as: ""
+}
+```
+
+```json
+$lookup: {
+    from: "",
+    let: {},
+    pipeline: [],
+    as: ""
+}
+```
